@@ -26,3 +26,60 @@ p {
   padding: 0;
   margin: 0;
 }
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+span {
+  font-family: "Kaushan Script", cursive;
+  margin-bottom: 10px;
+}
+
+.author {
+  text-align: end;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+hr {
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  border: 2px solid #0000fe;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #0000fe;
+  color: #fff;
+  padding: 5px 20px 5px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0px;
+  cursor: pointer;
+}
