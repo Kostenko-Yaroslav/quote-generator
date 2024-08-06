@@ -18,6 +18,10 @@ export default function Generator() {
         console.log(err);
       });
   };
+  function copyQuote() {
+    navigator.clipboard.writeText(quote);
+    alert("Copied the text: " + quote);
+  }
 
   return (
     <main>
@@ -28,7 +32,12 @@ export default function Generator() {
         <hr />
         <footer>
           <div>
-            <TbCopy size={40} color="#0000fe" className="icon" />
+            <TbCopy
+              onClick={copyQuote}
+              size={40}
+              color="#0000fe"
+              className="icon"
+            />
             <a href="https://twitter.com" target="blank">
               <TiSocialTwitter size={40} color="#0000fe" className="icon" />
             </a>
