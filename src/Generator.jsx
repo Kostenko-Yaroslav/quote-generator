@@ -1,20 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./generator.css";
 import { TbCopy } from "react-icons/tb";
 import { TiSocialTwitter } from "react-icons/ti";
+import axios from "axios";
 
 export default function Generator() {
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+  const getQuote = () => {
+    axios
+      .get("https://api.quotable.io/random")
+      .then((res) => {
+        setQuote(res.data.content);
+        setAuthor(res.data.author);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <main>
       <div className="container">
         <h1>Quote of the day</h1>
-        <span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          neque saepe ipsa assumenda nostrum consequatur totam expedita rerum
-          minus ratione? Autem, facilis dolor! Molestias deleniti asperiores ex
-          tenetur est officia.
-        </span>
-        <span className="author">--- author</span>
+        <span>"{quote}"</span>
+        <span className="author">--- {author}</span>
         <hr />
         <footer>
           <div>
@@ -23,7 +33,7 @@ export default function Generator() {
               <TiSocialTwitter size={40} color="#0000fe" className="icon" />
             </a>
           </div>
-          <button>New Quote</button>
+          <button onClick={getQuote}>New Quote</button>
         </footer>
       </div>
     </main>
